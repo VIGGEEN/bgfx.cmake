@@ -7,20 +7,20 @@
 
 # You should have received a copy of the CC0 Public Domain Dedication along with
 # this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
-
+message("HELLOGL")
 if( TARGET glslang )
 	return()
 endif()
-
+message("HELLO2")
 file( GLOB GLSLANG_SOURCES
 	${BGFX_DIR}/3rdparty/glslang/glslang/GenericCodeGen/*.cpp
 	${BGFX_DIR}/3rdparty/glslang/glslang/MachineIndependent/*.cpp
 	${BGFX_DIR}/3rdparty/glslang/glslang/MachineIndependent/preprocessor/*.cpp
-	${BGFX_DIR}/3rdparty/glslang/hlsl/*.cpp
+	${BGFX_DIR}/3rdparty/glslang/glslang/HLSL/*.cpp
 	${BGFX_DIR}/3rdparty/glslang/SPIRV/*.cpp
 	${BGFX_DIR}/3rdparty/glslang/OGLCompilersDLL/*.cpp
 )
-
+message(${GLSLANG_SOURCES})
 if( WIN32 )
 	list( APPEND GLSLANG_SOURCES ${BGFX_DIR}/3rdparty/glslang/glslang/OSDependent/Windows/ossource.cpp )
 else()
